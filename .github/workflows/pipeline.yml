@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sätt upp Node.js
-        uses: actions/setup-node.js
+        uses: actions/setup-node
         with:
           node-version: '20'
 
