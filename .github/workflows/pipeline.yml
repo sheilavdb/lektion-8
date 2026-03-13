@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Installera beroenden
         run: npm ci
@@ -35,6 +36,7 @@ jobs:
          uses: actions/setup-node@v4
          with: 
           node-version: '20'
+          cache: 'npm'
  
        - name: installera beroenden
          run: npm ci
