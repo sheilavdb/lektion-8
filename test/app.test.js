@@ -9,9 +9,9 @@ describe('GET /', () => {
   });
 });
 
-describe('GET /users', () => {
-  it('ska returnera en lista med användare', async () => {
-    const res = await request(app).get('/users');
+describe('GET /fruit', () => {
+  it('ska returnera en lista med frukter', async () => {
+    const res = await request(app).get('/fruit');
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
     expect(res.body.length).toBeGreaterThan(0);

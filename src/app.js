@@ -10,11 +10,11 @@ app.get('/', (req, res) => {
   res.json({ message: 'Lektion 8, bygg CD/CI Pipeline', status: 'ok' });
 });
 
-// En route som returnerar användare
-app.get('/users', (req, res) => {
+app.get('/fruit', (req, res) => {
   const users = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' },
+    { id: 1, item: 'Apple' },
+    { id: 2, item: 'Banana' },
+    { id: 3, item: 'Coconut'}
   ];
   res.json(users);
 });

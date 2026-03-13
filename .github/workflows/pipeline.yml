@@ -1,0 +1,24 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+
+  build:
+    name: Build 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Hämta kod från GitHub
+        uses: actions/checkout@v4
+
+      - name: Sätt upp Node.js
+        uses: actions/setup-node.js
+        with:
+          node-version: '20'
+
+      - name: Installera beroenden
+        run: npm ci
