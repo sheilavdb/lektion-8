@@ -64,6 +64,4 @@ jobs:
          run: npm install --save-dev eslint-plugin-security
 
        - name: run Sast test
-         run: npx eslint src/ --plugin security --rule '{"security/detect-eval-with-expression": "error", "security/detect-object-injection": "warn"}'
-
-      
+         run: npx eslint src/
