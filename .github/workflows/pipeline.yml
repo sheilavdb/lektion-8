@@ -61,7 +61,7 @@ jobs:
          run: npm ci
 
        - name: installera ES-lint Säkerhetsplugin
-         run: npm install --save-dev eslint-plugin-security
+         run: npm install --save-dev eslint eslint-plugin-security
 
        - name: run Sast test
          run: npx eslint src/
