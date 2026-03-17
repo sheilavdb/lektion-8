@@ -1,5 +1,5 @@
 # Använd en specifik version för reproducerbarhet
-FROM node:20-alpine
+FROM node:20-alpine3.22
 
 # Skapa en icke-root användare för säkerhet
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup

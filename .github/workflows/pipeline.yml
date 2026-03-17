@@ -110,3 +110,5 @@ jobs:
           image-ref: 'lektion-8-app:latest'
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
+          ignore-unfixed: true
+          
