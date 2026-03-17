@@ -112,3 +112,19 @@ jobs:
           severity: 'CRITICAL,HIGH'
           ignore-unfixed: true
           skip-dirs: '/usr/local/lib/node_modules/npm'
+ 
+  deploy: 
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: [ build, test, sast, sca, container-scanning ]
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Hämta kod från GitHub
+        uses: actions/checkout@v4
+
+      - name: Simulerad deploy till testmiljö
+        run: |
+          echo "Alla säkerhetstester godkänt"
+          echo "Ready for deploy"
+          echo "Deploy klar"
