@@ -92,3 +92,21 @@ jobs:
           name: dependency-check-report
           path: reports/
 
+  container-scanning:
+    name: container scanner
+    runs-on: ubuntu-latest
+    needs: [build, test, sast, sca ]
+
+    steps:
+      - name: Hämta kod från GitHub
+        uses: actions/checkout@v4
+
+      - name: build docker image
+        run: docker build -t lektion-8-app:latest .
+
+      - name: Scan Docker Image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'lektion-8-app:latest'
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
